@@ -4,6 +4,7 @@
 #include "ServiceAnalyzer.hpp"
 #include "BootAnalyzer.hpp"
 #include "PerformanceAnalyzer.hpp"
+#include "RecommendationEngine.hpp"
 
 int main() {
 
@@ -12,6 +13,7 @@ int main() {
     ServiceAnalyzer serviceAnalyzer;
     BootAnalyzer bootAnalyzer;
     PerformanceAnalyzer performanceAnalyzer;
+    RecommendationEngine recommendationEngine;
 
     std::cout << "========================================\n";
     std::cout << "          BOOTSCOPE v1.0\n";
@@ -44,5 +46,6 @@ int main() {
 
 
     std::cout << performanceAnalyzer.analyzeBootPerformance();
+    std::cout << recommendationEngine.generateRecommendations();
     return 0;
 }
