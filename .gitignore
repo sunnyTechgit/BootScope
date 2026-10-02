@@ -1,0 +1,14 @@
+bin/*
+!bin/.gitkeep
+
+reports/*
+!reports/.gitkeep
+
+*.o
+*.out
+*.log
+
+.vscode/
+.idea/
+
+.DS_Store
