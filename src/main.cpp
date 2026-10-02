@@ -2,12 +2,16 @@
 #include "BootProfiler.hpp"
 #include "SystemInfo.hpp"
 #include "ServiceAnalyzer.hpp"
+#include "BootAnalyzer.hpp"
+#include "PerformanceAnalyzer.hpp"
 
 int main() {
 
     SystemInfo systemInfo;
     BootProfiler bootProfiler;
     ServiceAnalyzer serviceAnalyzer;
+    BootAnalyzer bootAnalyzer;
+    PerformanceAnalyzer performanceAnalyzer;
 
     std::cout << "========================================\n";
     std::cout << "          BOOTSCOPE v1.0\n";
@@ -35,5 +39,10 @@ int main() {
     std::cout << "\n\n[SERVICE ANALYSIS]\n";
 
     std::cout << serviceAnalyzer.getServiceBlame();
+    std::cout << "\n\n[BOOT SUMMARY]\n";
+    std::cout << bootAnalyzer.getBootSummary();
+
+
+    std::cout << performanceAnalyzer.analyzeBootPerformance();
     return 0;
 }
