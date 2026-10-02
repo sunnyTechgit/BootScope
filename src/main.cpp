@@ -1,10 +1,11 @@
 #include <iostream>
-
+#include "BootProfiler.hpp"
 #include "SystemInfo.hpp"
 
 int main() {
 
     SystemInfo systemInfo;
+    BootProfiler bootProfiler;
 
     std::cout << "========================================\n";
     std::cout << "          BOOTSCOPE v1.0\n";
@@ -24,7 +25,11 @@ int main() {
           << systemInfo.getCpuInfo() << "\n";
     std::cout << "[INFO] Systemd: "
           << systemInfo.getSystemdVersion();
-
+    std::cout << "\n\n[BOOT ANALYSIS]\n";
+    std::cout << bootProfiler.getBootTime();
+    
+    std::cout << "\n\n[CRITICAL BOOT CHAIN]\n";
+    std::cout << bootProfiler.getCriticalChain();
 
     return 0;
 }
