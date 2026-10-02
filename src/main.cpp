@@ -1,11 +1,13 @@
 #include <iostream>
 #include "BootProfiler.hpp"
 #include "SystemInfo.hpp"
+#include "ServiceAnalyzer.hpp"
 
 int main() {
 
     SystemInfo systemInfo;
     BootProfiler bootProfiler;
+    ServiceAnalyzer serviceAnalyzer;
 
     std::cout << "========================================\n";
     std::cout << "          BOOTSCOPE v1.0\n";
@@ -27,9 +29,11 @@ int main() {
           << systemInfo.getSystemdVersion();
     std::cout << "\n\n[BOOT ANALYSIS]\n";
     std::cout << bootProfiler.getBootTime();
-    
+
     std::cout << "\n\n[CRITICAL BOOT CHAIN]\n";
     std::cout << bootProfiler.getCriticalChain();
+    std::cout << "\n\n[SERVICE ANALYSIS]\n";
 
+    std::cout << serviceAnalyzer.getServiceBlame();
     return 0;
 }
