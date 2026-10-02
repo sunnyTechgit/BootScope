@@ -12,3 +12,4 @@ reports/*
 .idea/
 
 .DS_Store
+reports/*.txt
